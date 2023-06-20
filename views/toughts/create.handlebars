@@ -1,0 +1,8 @@
+<form action="/toughts/create" method="post">
+    <label >
+        <span>Title</span>
+        <input type="text" name="title" >
+    </label>
+    <input type="hidden" name="author" value="{{user.name}}">
+    <input type="submit" value="Create">
+</form>

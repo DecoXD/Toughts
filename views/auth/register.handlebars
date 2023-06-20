@@ -1,0 +1,31 @@
+
+<form action="/register" method="post">
+    <div class="form-controller">
+        <label >
+            <span>name</span>
+            <input type="text" name="name" placeholder="digite seu nome aqui" required>
+        </label>
+    </div>
+    <div class="form-controller">
+        <label >
+            <span>login</span>
+            <input type="text" name="login" placeholder="digite o login desejado" required>
+        </label>
+    </div>
+    <div class="form-controller">
+        <label >
+            <span>password</span>
+            <input type="password" name="password" placeholder="digite sua senha" required>
+        </label>
+    <div class="form-controller">
+        <label >
+            <span>confirm password</span>
+            <input type="password" name="confirmPassword" placeholder="confirme sua senha" required>
+        </label>
+    </div>
+    <input type="submit" value="register">
+</form>
+{{#if messages.message}}
+<p class="error-msg">{{messages.message}}</p>
+{{/if }}
+<p>ja possui uma conta ? <span><a href="/login"> Clique aqui</a></span></p>

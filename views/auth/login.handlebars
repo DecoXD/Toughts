@@ -1,0 +1,20 @@
+
+<form action="/login" method="post">
+    <div class="form-controller">
+        <label >
+            <span>login</span>
+            <input type="text" name="login" placeholder="digite o login desejado" required>
+        </label>
+    </div>
+    <div class="form-controller">
+        <label >
+            <span>password</span>
+            <input type="password" name="password" placeholder="digite sua senha" required>
+        </label>
+  
+    <input type="submit" value="login">
+</form>
+{{#if messages.message}}
+<p class="error-msg">{{messages.message}}</p>
+{{/if }}
+<p>não possui uma conta ? <span><a href="/register"> Clique aqui</a></span></p>

@@ -1,0 +1,17 @@
+<h1>dashboard</h1>
+
+{{#each toughtList}}
+<div class="tought-container">
+    <h3>{{this.title}}</h3>
+    <p>created by {{this.author}}</p>
+    <div class="form-control">
+        <a href="/toughts/update/{{this.id}}">edit</a>
+        <form action="/toughts/delete" method="post">
+            <input type="hidden" name="id" value="{{this.id}}">
+            <input type="submit" value="delete">
+            </form>
+       
+    </div>
+</div>
+<hr>
+{{/each}}
