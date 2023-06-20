@@ -6,6 +6,12 @@ module.exports = class AuthController {
 
     static login(req, res)
     {
+        const {userid} = req.session
+        if(userid){
+            res.redirect('/')
+            return;
+        }
+        
         res.render('auth/login')
      }
     static async userAuth(req, res){
@@ -30,6 +36,11 @@ module.exports = class AuthController {
 
     static register(req, res)
     {
+        const {userid} = req.session
+        if(userid){
+            res.redirect('/')
+            return;
+        }
         res.render('auth/register')
      }
 
@@ -44,21 +55,22 @@ module.exports = class AuthController {
             res.render('auth/register')
             return;
         }
+        if(password.length < 6) {
+            req.flash('message','sua senha deve conter no mínimo 6 caracteres')
+            res.render('auth/register')
+            return;
+        }
         if(exists) {
             req.flash('message','Usuário ja existente')
             res.render('auth/register')
             return;
         }
-        if(login.length < 6 ){
-            req.flash('message', 'seu login deve conter no minimo 6 caracteres')
+        if(login.length < 3 || name.length < 3){
+            req.flash('message', 'seu login e seu nome deve conter no minimo 3 caracteres')
             res.render('auth/register')
             return;
         }
-        if(name.length < 3){
-            req.flash('message', 'seu nome deve conter no minimo 3 caracteres')
-            res.render('auth/register')
-            return;
-        }
+      
         const salt = bcrypt.genSaltSync(10)
         const hashPassword = bcrypt.hashSync(password,salt)
         const userData = {
