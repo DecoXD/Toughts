@@ -1,0 +1,12 @@
+.form-control{
+    display: flex;
+    gap: 1.2rem;
+    
+}
+
+.delete-btn{
+    border: none;
+    background: none;
+    color: rgb(110, 36, 2);
+    cursor: pointer;
+}

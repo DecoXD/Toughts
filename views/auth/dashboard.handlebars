@@ -1,20 +1,23 @@
-<h1>dashboard</h1>
+<div class="section-temp">
+    <h1 class="t-center f-big">dashboard</h1>
+    
+    {{#if emptyToughts}}
+        <p>lista vazia deseja criar? <a href="/toughts/create"> clique aqui</a></p>
+    {{/if}}
+    {{#each toughtList}}
+    <figure class="tought-container">
+        <blockquote class="f-big">{{this.title}}</blockquote>
+        <figcaption class="f-small">created by: <span class="f-bold">{{this.author}}</span></figcaption>
 
-{{#if emptyToughts}}
-    <p>lista vazia deseja criar? <a href="/toughts/create"> clique aqui</a></p>
-{{/if}}
-{{#each toughtList}}
-<div class="tought-container">
-    <h3>{{this.title}}</h3>
-    <p>created by {{this.author}}</p>
-    <div class="form-control">
-        <a href="/toughts/update/{{this.id}}">edit</a>
-        <form action="/toughts/delete" method="post">
-            <input type="hidden" name="id" value="{{this.id}}">
-            <input type="submit" value="delete">
-            </form>
-       
-    </div>
+        <div class="form-control">
+            <a href="/toughts/update/{{this.id}}"><i class="bi bi-pencil f-medium"></i></a>
+            <form action="/toughts/delete" method="post">
+                <input type="hidden" name="id" value="{{this.id}}">
+                <button type="submit" class="delete-btn f-medium"><i class="bi bi-trash"></i></button>
+                </form>
+    
+        </div>
+    </figure>
+    
+    {{/each}}
 </div>
-<hr>
-{{/each}}

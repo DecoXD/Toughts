@@ -1,0 +1,23 @@
+
+.create-form{
+    width: 100%;
+    max-width: 600px;
+    /* border: 2px solid red; */
+    align-items: flex-end;
+    justify-content: center;
+    gap: 1rem;
+    margin: 4rem auto
+
+ 
+}
+
+.form-label{
+    display: flex;
+    width: 100%;
+    
+}
+
+.create-form .create-btn{
+    
+
+}

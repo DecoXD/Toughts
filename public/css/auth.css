@@ -1,0 +1,25 @@
+.auth-form{
+    flex-direction: column;
+    
+    max-width: 500px;
+    margin: auto;
+    width: 100%;
+}
+
+
+
+.full-center{
+    display: flex;
+    min-height: 80vh;
+align-items: center;
+justify-content: center;
+}
+
+.auth-btn{
+    margin:1.2rem auto;
+}
+
+.auth-label{
+    text-transform: capitalize;
+   line-height: 2;
+}

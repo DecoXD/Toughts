@@ -1,9 +1,9 @@
  
-    <form action="/toughts/update" method="post">
+    <form action="/toughts/update" method="post" class="create-form">
         <input type="hidden" name="id" value="{{tought.id}}">
-        <label >
-            <span>Title</span>
-            <input type="text" name="title" value="{{tought.title}}" >
+        <label class="form-label">
+            <span class="title f-big">Title</span>
+            <input type="text" name="title" value="{{tought.title}}" class="g-input" >
         </label>
-        <input type="submit" value="Create">
+        <input type="submit" value="Create" class="g-btn create-btn">
     </form>

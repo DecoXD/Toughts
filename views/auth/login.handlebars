@@ -1,20 +1,25 @@
-
-<form action="/login" method="post">
-    <div class="form-controller">
-        <label >
-            <span>login</span>
-            <input type="text" name="login" placeholder="digite o login desejado" required>
-        </label>
+<div class="full-center">
+    <div class="section-temp f-small-16 ">
+        <h2 class="f-bold t-center f-big">LOGIN</h2>
+        <form action="/login" method="post" class="auth-form">
+            
+                <label class="auth-label">
+                    <span>login</span>
+                    <input class="g-input" type="text" name="login" placeholder="digite o login desejado" required>
+                </label>
+        
+            
+                <label class="auth-label">
+                    <span>password</span>
+                    <input class="g-input" type="password" name="password" placeholder="digite sua senha" required>
+                </label>
+                
+    
+            <input type="submit" value="login" class="g-btn auth-btn">
+        </form>
+        {{#if messages.message}}
+        <p class="error-msg">{{messages.message}}</p>
+        {{/if }}
+        <p  class="t-center f-small-16">não possui uma conta ? <span class="f-bold"><a href="/register" > Clique aqui</a></span></p>
     </div>
-    <div class="form-controller">
-        <label >
-            <span>password</span>
-            <input type="password" name="password" placeholder="digite sua senha" required>
-        </label>
-  
-    <input type="submit" value="login">
-</form>
-{{#if messages.message}}
-<p class="error-msg">{{messages.message}}</p>
-{{/if }}
-<p>não possui uma conta ? <span><a href="/register"> Clique aqui</a></span></p>
+</div>

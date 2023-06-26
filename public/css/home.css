@@ -1,0 +1,29 @@
+.home-section,.section-temp{
+padding: 1.2rem;
+display: flex;
+flex-direction: column;
+gap: 3rem
+}
+
+.search-form{
+    gap: 1rem;
+    width: 100%;
+    max-width: 50rem;
+    margin-inline: auto;
+}
+
+
+.filter{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+
+}
+
+.filter button{
+    border: none;
+    background:none ;
+    color: rebeccapurple;
+    cursor: pointer;
+}
