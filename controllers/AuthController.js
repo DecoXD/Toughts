@@ -91,7 +91,14 @@ module.exports = class AuthController {
     }
 
     static async dashboard(req,res) {
-        const toughtList = await Tought.findAll({raw:true})
-        res.render('auth/dashboard',{toughtList})
+        let emptyToughts = false
+        const id = req.session.userid
+        const toughtList = await Tought.findAll({raw:true,where:{
+            UserId:id
+        }})
+        if(toughtList.length == 0) {
+            emptyToughts = true
+        }
+        res.render('auth/dashboard',{toughtList,emptyToughts})
     }
 }

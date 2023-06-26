@@ -1,5 +1,8 @@
 <h1>dashboard</h1>
 
+{{#if emptyToughts}}
+    <p>lista vazia deseja criar? <a href="/toughts/create"> clique aqui</a></p>
+{{/if}}
 {{#each toughtList}}
 <div class="tought-container">
     <h3>{{this.title}}</h3>

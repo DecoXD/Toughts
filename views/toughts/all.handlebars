@@ -1,10 +1,31 @@
 <h1>todos</h1>
+<form action="/" method="get">
+    <input type="text" name="search" placeholder="Está buscando algo?">
+    <input type="submit" class="btn" value="Buscar">
+</form>
 
-{{#each toughtList}}
-<div class="tought-container">
-    <h3>{{this.title}}</h3>
-    
-        <p>created by {{this.author}}</p>
+
+<div class="search-form">
+    <form action="/" method="get">
+        <input type="hidden" name="search" value="{{this.search}}">
+        <input type="hidden" name="order" value="new">
+        <button type="submit">new</button>
+    </form>
+    <form action="/" method="get">
+        <input type="hidden" name="search" value="{{this.search}}">
+        <input type="hidden" name="order" value="old">
+        <button type="submit">old</button>
+    </form>
+    <a href="/"> limpar</a>
 </div>
+
+{{#if search}}
+    <p>resultados encontrados para '{{search}}' : {{toughtList.length}}</p>
+{{/if }}
+{{#each toughtList}}
+<figure class="tought-container">
+    <blockquote>{{this.title}}</blockquote>
+    <figcaption>created by <span>{{this.author}}</span></figcaption>
+</figure>
 <hr>
 {{/each}}
