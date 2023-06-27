@@ -9,12 +9,12 @@ module.exports = class ToughtController {
            
         }
         
-        let order = 'ASC'
+        let order = 'DESC'
         if(req.query.order === 'new'){
-            order = 'DESC'
+            order = 'ASC'
         }
         else{
-            order = 'ASC'
+            order = 'DESC'
         }
 
         const toughtList = await Tought.findAll({

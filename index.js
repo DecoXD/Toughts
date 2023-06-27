@@ -73,6 +73,6 @@ app.use('/', AuthRouter)
 app.get('/',checkAuth, ToughtController.showAll)
 
 //conection
-conn.sync({force:true}).then(() => {
+conn.sync().then(() => {
     app.listen(3000)
 })
